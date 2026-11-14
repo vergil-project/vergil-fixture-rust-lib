@@ -510,6 +510,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#reverse_words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reverse_words
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -633,6 +644,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#reverse_words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reverse_words
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -725,6 +747,16 @@ back to the same JSON with <code>serde_json</code>. <code>render</code> gives th
 
 <span class="fm">assert_eq!</span><span class="p">(</span><span class="n">initials</span><span class="p">(</span><span class="s">"Ada Lovelace"</span><span class="p">),</span><span class="w"> </span><span class="s">"AL"</span><span class="p">);</span>
 <span class="fm">assert_eq!</span><span class="p">(</span><span class="n">initials</span><span class="p">(</span><span class="s">"émilie du châtelet"</span><span class="p">),</span><span class="w"> </span><span class="s">"ÉDC"</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="reverse_words"><code>reverse_words</code><a class="headerlink" href="#reverse_words" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">reverse_words</span><span class="p">(</span><span class="n">text</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">String</span>
+</code></pre></div>
+<p>The whitespace-separated words of <code>text</code> in reverse order, joined by single
+spaces.</p>
+<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">vergil_fixture_rust_lib</span><span class="p">::</span><span class="n">reverse_words</span><span class="p">;</span>
+
+<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">reverse_words</span><span class="p">(</span><span class="s">"the quick  brown fox"</span><span class="p">),</span><span class="w"> </span><span class="s">"fox brown quick the"</span><span class="p">);</span>
+<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">reverse_words</span><span class="p">(</span><span class="s">"   "</span><span class="p">),</span><span class="w"> </span><span class="s">""</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">Error</span><span class="w"> </span><span class="p">{</span>
