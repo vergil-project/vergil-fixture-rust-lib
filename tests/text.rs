@@ -40,7 +40,10 @@ fn reverse_words_reverses_the_word_order() {
 
 #[test]
 fn reverse_words_joins_with_single_spaces() {
-    assert_eq!(reverse_words("  the quick\t\tbrown\nfox "), "fox brown quick the");
+    assert_eq!(
+        reverse_words("  the quick\t\tbrown\nfox "),
+        "fox brown quick the"
+    );
 }
 
 #[test]
