@@ -31,8 +31,8 @@ release and the docs site. The fixture exercises:
   automation enabled;
 - three real runtime dependencies, `serde`, `serde_json` and `thiserror`.
 
-Its public API is four functions, `greet`, `parse_greeting`, `word_count` and
-`initials`, plus the `Greeting` and `Error` types.
+Its public API is five functions, `greet`, `parse_greeting`, `word_count`,
+`initials` and `reverse_words`, plus the `Greeting` and `Error` types.
 
 ## Getting Started
 

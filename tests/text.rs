@@ -1,6 +1,6 @@
 //! Tests for the text functions.
 
-use vergil_fixture_rust_lib::{initials, word_count};
+use vergil_fixture_rust_lib::{initials, reverse_words, word_count};
 
 #[test]
 fn word_count_counts_whitespace_separated_words() {
@@ -31,4 +31,25 @@ fn initials_handles_non_ascii_letters() {
 #[test]
 fn initials_of_blank_text_is_empty() {
     assert_eq!(initials("   "), "");
+}
+
+#[test]
+fn reverse_words_reverses_the_word_order() {
+    assert_eq!(reverse_words("Ada Lovelace"), "Lovelace Ada");
+}
+
+#[test]
+fn reverse_words_joins_with_single_spaces() {
+    assert_eq!(reverse_words("  the quick\t\tbrown\nfox "), "fox brown quick the");
+}
+
+#[test]
+fn reverse_words_keeps_a_single_word() {
+    assert_eq!(reverse_words("émilie"), "émilie");
+}
+
+#[test]
+fn reverse_words_of_blank_text_is_empty() {
+    assert_eq!(reverse_words(""), "");
+    assert_eq!(reverse_words(" \n\t "), "");
 }
