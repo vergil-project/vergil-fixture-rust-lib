@@ -1,0 +1,23 @@
+[package]
+name = "vergil-fixture-rust-lib"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+description = "Vergil test fixture: a small Rust library. No users."
+license = "MIT"
+repository = "https://github.com/vergil-project/vergil-fixture-rust-lib"
+readme = "README.md"
+# A fixture never reaches a package registry (epic vergil-project/.github#1091).
+publish = false
+
+[dependencies]
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+thiserror = "2.0.21"
+
+[lints.rust]
+missing_docs = "warn"
+unsafe_code = "forbid"
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
