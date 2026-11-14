@@ -253,6 +253,25 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="api/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -314,6 +333,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -330,6 +367,36 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -362,6 +429,33 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -382,6 +476,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -398,7 +511,33 @@
 
 
 <h1 id="vergil-fixture-rust-lib">vergil-fixture-rust-lib<a class="headerlink" href="#vergil-fixture-rust-lib" title="Permanent link">&para;</a></h1>
-<p>Welcome to the vergil-fixture-rust-lib documentation.</p>
+<div class="admonition warning">
+<p class="admonition-title">A test fixture, not a real library</p>
+<p>This crate is a Vergil test fixture. It has no users, and it is never
+published to crates.io.</p>
+</div>
+<p><code>vergil-fixture-rust-lib</code> is a small Rust library that exists so Vergil's Rust
+support has a real crate to work on. Each fixture run makes a small change to
+it and drives that change through Vergil's whole cycle for real: the PR, CI,
+the merge, the release and this docs site. A step that breaks shows up here
+before it reaches a real Rust repo.</p>
+<p>It exercises:</p>
+<ul>
+<li><code>vrg-validate</code> for Rust: <code>cargo fmt</code>, <code>cargo clippy</code>, <code>cargo check</code>, the
+  tests under <code>cargo llvm-cov</code> at 100% line coverage, and the <code>cargo deny</code>
+  audit against Vergil's packaged license and advisory policy;</li>
+<li>the CI and release workflows a real Rust library gets, with every fleet
+  automation enabled;</li>
+<li>three real runtime dependencies, <code>serde</code>, <code>serde_json</code> and <code>thiserror</code>, so
+  the audit, the license check and Dependabot have real work to do.</li>
+</ul>
+<p>Why the fixtures exist, and how a fixture run works, is set out in the
+<a href="https://github.com/vergil-project/.github/blob/develop/epics/1091-language-fixture-repos/spec.md">language fixture repos spec</a>.</p>
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="getting-started/">Getting Started</a>: build and test the crate.</li>
+<li><a href="api/">API</a>: the library's public functions.</li>
+</ul>
 
 
 

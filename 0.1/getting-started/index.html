@@ -12,6 +12,8 @@
         <link rel="prev" href="..">
       
       
+        <link rel="next" href="../api/">
+      
       
         
       
@@ -253,6 +255,25 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../api/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -341,6 +362,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -358,6 +397,85 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a function
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -382,6 +500,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a function
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -398,7 +557,55 @@
 
 
 <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
-<p>TODO: Add getting started guide for vergil-fixture-rust-lib.</p>
+<p>The crate is not on crates.io (a fixture never reaches a package registry), so
+work on it from a clone of the repository.</p>
+<h2 id="validate">Validate<a class="headerlink" href="#validate" title="Permanent link">&para;</a></h2>
+<p>Validation runs in Vergil's Rust dev image, the same way CI runs it:</p>
+<div class="highlight"><pre><span></span><code>vrg-container-run<span class="w"> </span>--<span class="w"> </span>vrg-validate
+</code></pre></div>
+<p>That formats, lints, type-checks, tests at 100% line coverage and audits the
+dependencies. There is no other validation command.</p>
+<h2 id="layout">Layout<a class="headerlink" href="#layout" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src/lib.rs</code></td>
+<td>The crate root: its modules and the <code>pub use</code> lines that make up the public API</td>
+</tr>
+<tr>
+<td><code>src/greeting.rs</code></td>
+<td>The greeting functions</td>
+</tr>
+<tr>
+<td><code>src/text.rs</code></td>
+<td>The text functions</td>
+</tr>
+<tr>
+<td><code>src/error.rs</code></td>
+<td>The library's error type</td>
+</tr>
+<tr>
+<td><code>tests/</code></td>
+<td>One integration-test file per module</td>
+</tr>
+</tbody>
+</table>
+<h2 id="adding-a-function">Adding a function<a class="headerlink" href="#adding-a-function" title="Permanent link">&para;</a></h2>
+<p>Each fixture run adds one function, without restructuring the crate:</p>
+<ol>
+<li>Write its tests in the <code>tests/</code> file for its theme, or a new one.</li>
+<li>Add the function, with a doc comment, to the module for its theme, or to a
+   new module declared in <code>src/lib.rs</code>.</li>
+<li>Add it to the <code>pub use</code> lines in <code>src/lib.rs</code>.</li>
+<li>Document it on the <a href="../api/">API</a> page.</li>
+<li>Run <code>vrg-container-run -- vrg-validate</code>.</li>
+</ol>
 
 
 
