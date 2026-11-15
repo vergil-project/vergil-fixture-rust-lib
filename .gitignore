@@ -29,4 +29,5 @@ docs/site/docs/releases/
 mkdocs.staged.yml
 node_modules/
 target/
+cargo-deny.json
 # <<< vergil-managed <<<
