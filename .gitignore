@@ -1,4 +1,4 @@
-# >>> vergil-managed: base + rust (managed by vrg-gitignore-sync; do not edit) >>>
+# >>> vergil-managed: base + rust (managed by vrg-github-repo-config update; do not edit) >>>
 *.swp
 *.swo
 *~
@@ -29,4 +29,5 @@ docs/site/docs/releases/
 mkdocs.staged.yml
 node_modules/
 target/
+cargo-deny.json
 # <<< vergil-managed <<<
