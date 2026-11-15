@@ -25,8 +25,9 @@ drives it through Vergil's whole cycle for real: the PR, CI, the merge, the
 release and the docs site. The fixture exercises:
 
 - `vrg-validate` for Rust: `cargo fmt`, `cargo clippy`, `cargo check`, the
-  tests under `cargo llvm-cov` at 100% line coverage, and the `cargo deny`
-  audit against Vergil's packaged policy;
+  tests under `cargo llvm-cov` at 100% line coverage, the doctests under
+  `cargo test --doc`, and the `cargo deny` audit against Vergil's packaged
+  policy;
 - the CI and release workflows of a Vergil Rust library, with every fleet
   automation enabled;
 - three real runtime dependencies, `serde`, `serde_json` and `thiserror`.
