@@ -42,3 +42,22 @@ pub fn initials(text: &str) -> String {
 pub fn reverse_words(text: &str) -> String {
     text.split_whitespace().rev().collect::<Vec<_>>().join(" ")
 }
+
+/// The longest whitespace-separated word in `text`, counted in characters,
+/// or `None` when `text` has no words. Of several equally long words, the
+/// first wins.
+///
+/// ```
+/// use vergil_fixture_rust_lib::longest_word;
+///
+/// assert_eq!(longest_word("the quick  brown fox"), Some("quick"));
+/// assert_eq!(longest_word("   "), None);
+/// ```
+#[must_use]
+pub fn longest_word(text: &str) -> Option<&str> {
+    // `max_by_key` keeps the last of equal maxima, so walking the words in
+    // reverse makes the first one win.
+    text.split_whitespace()
+        .rev()
+        .max_by_key(|word| word.chars().count())
+}

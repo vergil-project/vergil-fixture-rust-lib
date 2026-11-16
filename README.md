@@ -33,8 +33,8 @@ release and the docs site. The fixture exercises:
 - three real runtime dependencies, `serde`, `serde_json` and `thiserror`.
 
 Its public API is made up of the functions `greet`, `parse_greeting`,
-`word_count`, `initials` and `reverse_words`, plus the `Greeting` and `Error`
-types.
+`word_count`, `initials`, `reverse_words` and `longest_word`, plus the
+`Greeting` and `Error` types.
 
 ## Getting Started
 
