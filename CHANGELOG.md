@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.1] - 2026-11-17
+
+### Build
+
+- raise the rust-version floor to 1.98 (#17)
+
+### CI
+
+- move the nightly ops cron to the 01:xx UTC hour (#16)
+
+### Chores
+
+- sync the managed files with the released templates (#14)
+- sync the managed files with the released templates (#26)
+
+### Documentation
+
+- list the doctests, the formatting check and the README step for a new function (#19)
+
+### Features
+
+- add longest_word, and roll memchr back in Cargo.lock (#25)
+
 ## [0.1.0] - 2026-11-14
 
 ### CI
