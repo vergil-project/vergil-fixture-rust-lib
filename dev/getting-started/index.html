@@ -563,8 +563,9 @@ work on it from a clone of the repository.</p>
 <p>Validation runs in Vergil's Rust dev image, the same way CI runs it:</p>
 <div class="highlight"><pre><span></span><code>vrg-container-run<span class="w"> </span>--<span class="w"> </span>vrg-validate
 </code></pre></div>
-<p>That checks formatting, lints, type-checks, tests at 100% line coverage, runs
-the doctests and audits the dependencies. There is no other validation command.</p>
+<p>That checks formatting, lints, type-checks, tests at 100% line and region
+coverage, runs the doctests, builds the release profile and audits the
+dependencies. There is no other validation command.</p>
 <h2 id="layout">Layout<a class="headerlink" href="#layout" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

@@ -524,8 +524,9 @@ before it reaches a real Rust repo.</p>
 <p>It exercises:</p>
 <ul>
 <li><code>vrg-validate</code> for Rust: <code>cargo fmt</code>, <code>cargo clippy</code>, <code>cargo check</code>, the
-  tests under <code>cargo llvm-cov</code> at 100% line coverage, the doctests under
-  <code>cargo test --doc</code>, and the <code>cargo deny</code> audit against Vergil's packaged
+  tests under <code>cargo llvm-cov</code> at 100% line and region coverage, the
+  doctests under <code>cargo test --doc</code>, the release build
+  (<code>cargo build --release --locked --workspace</code>), and the <code>cargo deny</code> audit against Vergil's packaged
   license and advisory policy;</li>
 <li>the CI and release workflows a real Rust library gets, with every fleet
   automation enabled;</li>
