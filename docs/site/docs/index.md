@@ -14,8 +14,9 @@ before it reaches a real Rust repo.
 It exercises:
 
 - `vrg-validate` for Rust: `cargo fmt`, `cargo clippy`, `cargo check`, the
-  tests under `cargo llvm-cov` at 100% line coverage, and the `cargo deny`
-  audit against Vergil's packaged license and advisory policy;
+  tests under `cargo llvm-cov` at 100% line coverage, the doctests under
+  `cargo test --doc`, and the `cargo deny` audit against Vergil's packaged
+  license and advisory policy;
 - the CI and release workflows a real Rust library gets, with every fleet
   automation enabled;
 - three real runtime dependencies, `serde`, `serde_json` and `thiserror`, so

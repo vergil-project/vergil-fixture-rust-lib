@@ -1,6 +1,6 @@
 //! Tests for the text functions.
 
-use vergil_fixture_rust_lib::{initials, reverse_words, word_count};
+use vergil_fixture_rust_lib::{initials, longest_word, reverse_words, word_count};
 
 #[test]
 fn word_count_counts_whitespace_separated_words() {
@@ -55,4 +55,31 @@ fn reverse_words_keeps_a_single_word() {
 fn reverse_words_of_blank_text_is_empty() {
     assert_eq!(reverse_words(""), "");
     assert_eq!(reverse_words(" \n\t "), "");
+}
+
+#[test]
+fn longest_word_finds_the_longest_word() {
+    assert_eq!(longest_word("Ada Lovelace"), Some("Lovelace"));
+}
+
+#[test]
+fn longest_word_keeps_the_first_of_equally_long_words() {
+    assert_eq!(longest_word("the quick brown fox"), Some("quick"));
+}
+
+#[test]
+fn longest_word_counts_characters_not_bytes() {
+    assert_eq!(longest_word("émilie abcdef"), Some("émilie"));
+    assert_eq!(longest_word("abcdef émilie"), Some("abcdef"));
+}
+
+#[test]
+fn longest_word_splits_on_any_whitespace() {
+    assert_eq!(longest_word("  a\tbb\nccc "), Some("ccc"));
+}
+
+#[test]
+fn longest_word_of_blank_text_is_none() {
+    assert_eq!(longest_word(""), None);
+    assert_eq!(longest_word(" \n\t "), None);
 }

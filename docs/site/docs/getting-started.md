@@ -11,8 +11,8 @@ Validation runs in Vergil's Rust dev image, the same way CI runs it:
 vrg-container-run -- vrg-validate
 ```
 
-That formats, lints, type-checks, tests at 100% line coverage and audits the
-dependencies. There is no other validation command.
+That checks formatting, lints, type-checks, tests at 100% line coverage, runs
+the doctests and audits the dependencies. There is no other validation command.
 
 ## Layout
 
@@ -33,4 +33,5 @@ Each fixture run adds one function, without restructuring the crate:
    new module declared in `src/lib.rs`.
 3. Add it to the `pub use` lines in `src/lib.rs`.
 4. Document it on the [API](api.md) page.
-5. Run `vrg-container-run -- vrg-validate`.
+5. Add it to the function list in `README.md`.
+6. Run `vrg-container-run -- vrg-validate`.

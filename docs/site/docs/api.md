@@ -102,6 +102,23 @@ assert_eq!(reverse_words("the quick  brown fox"), "fox brown quick the");
 assert_eq!(reverse_words("   "), "");
 ```
 
+### `longest_word`
+
+```rust
+pub fn longest_word(text: &str) -> Option<&str>
+```
+
+The longest whitespace-separated word in `text`, counted in characters, or
+`None` when `text` has no words. Of several equally long words, the first
+wins.
+
+```rust
+use vergil_fixture_rust_lib::longest_word;
+
+assert_eq!(longest_word("the quick  brown fox"), Some("quick"));
+assert_eq!(longest_word("   "), None);
+```
+
 ## Errors
 
 ```rust
