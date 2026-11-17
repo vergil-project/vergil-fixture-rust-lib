@@ -11,8 +11,9 @@ Validation runs in Vergil's Rust dev image, the same way CI runs it:
 vrg-container-run -- vrg-validate
 ```
 
-That checks formatting, lints, type-checks, tests at 100% line coverage, runs
-the doctests and audits the dependencies. There is no other validation command.
+That checks formatting, lints, type-checks, tests at 100% line and region
+coverage, runs the doctests, builds the release profile and audits the
+dependencies. There is no other validation command.
 
 ## Layout
 
