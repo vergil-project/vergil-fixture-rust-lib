@@ -30,4 +30,6 @@ mkdocs.staged.yml
 node_modules/
 target/
 cargo-deny.json
+quality-clippy.json
+quality-cargo-check.json
 # <<< vergil-managed <<<
