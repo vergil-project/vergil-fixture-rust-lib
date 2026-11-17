@@ -563,8 +563,8 @@ work on it from a clone of the repository.</p>
 <p>Validation runs in Vergil's Rust dev image, the same way CI runs it:</p>
 <div class="highlight"><pre><span></span><code>vrg-container-run<span class="w"> </span>--<span class="w"> </span>vrg-validate
 </code></pre></div>
-<p>That formats, lints, type-checks, tests at 100% line coverage and audits the
-dependencies. There is no other validation command.</p>
+<p>That checks formatting, lints, type-checks, tests at 100% line coverage, runs
+the doctests and audits the dependencies. There is no other validation command.</p>
 <h2 id="layout">Layout<a class="headerlink" href="#layout" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -604,6 +604,7 @@ dependencies. There is no other validation command.</p>
    new module declared in <code>src/lib.rs</code>.</li>
 <li>Add it to the <code>pub use</code> lines in <code>src/lib.rs</code>.</li>
 <li>Document it on the <a href="../api/">API</a> page.</li>
+<li>Add it to the function list in <code>README.md</code>.</li>
 <li>Run <code>vrg-container-run -- vrg-validate</code>.</li>
 </ol>
 
