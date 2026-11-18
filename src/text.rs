@@ -61,3 +61,16 @@ pub fn longest_word(text: &str) -> Option<&str> {
         .rev()
         .max_by_key(|word| word.chars().count())
 }
+
+/// Counts the characters of `text` that are not whitespace.
+///
+/// ```
+/// use vergil_fixture_rust_lib::letter_count;
+///
+/// assert_eq!(letter_count("the quick  brown fox"), 16);
+/// assert_eq!(letter_count("   "), 0);
+/// ```
+#[must_use]
+pub fn letter_count(text: &str) -> usize {
+    text.chars().filter(|c| !c.is_whitespace()).count()
+}
