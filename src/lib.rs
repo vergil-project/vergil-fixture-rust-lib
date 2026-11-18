@@ -24,4 +24,4 @@ mod text;
 
 pub use error::Error;
 pub use greeting::{Greeting, greet, parse_greeting};
-pub use text::{initials, longest_word, reverse_words, word_count};
+pub use text::{initials, letter_count, longest_word, reverse_words, word_count};

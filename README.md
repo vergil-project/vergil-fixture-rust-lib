@@ -25,16 +25,17 @@ drives it through Vergil's whole cycle for real: the PR, CI, the merge, the
 release and the docs site. The fixture exercises:
 
 - `vrg-validate` for Rust: `cargo fmt`, `cargo clippy`, `cargo check`, the
-  tests under `cargo llvm-cov` at 100% line coverage, the doctests under
-  `cargo test --doc`, and the `cargo deny` audit against Vergil's packaged
+  tests under `cargo llvm-cov` at 100% line and region coverage, the
+  doctests under `cargo test --doc`, the release build
+  (`cargo build --release --locked --workspace`), and the `cargo deny` audit against Vergil's packaged
   policy;
 - the CI and release workflows of a Vergil Rust library, with every fleet
   automation enabled;
 - three real runtime dependencies, `serde`, `serde_json` and `thiserror`.
 
 Its public API is made up of the functions `greet`, `parse_greeting`,
-`word_count`, `initials`, `reverse_words` and `longest_word`, plus the
-`Greeting` and `Error` types.
+`word_count`, `initials`, `reverse_words`, `longest_word` and `letter_count`,
+plus the `Greeting` and `Error` types.
 
 ## Getting Started
 

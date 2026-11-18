@@ -1,6 +1,6 @@
 //! Tests for the text functions.
 
-use vergil_fixture_rust_lib::{initials, longest_word, reverse_words, word_count};
+use vergil_fixture_rust_lib::{initials, letter_count, longest_word, reverse_words, word_count};
 
 #[test]
 fn word_count_counts_whitespace_separated_words() {
@@ -82,4 +82,20 @@ fn longest_word_splits_on_any_whitespace() {
 fn longest_word_of_blank_text_is_none() {
     assert_eq!(longest_word(""), None);
     assert_eq!(longest_word(" \n\t "), None);
+}
+
+#[test]
+fn letter_count_skips_whitespace() {
+    assert_eq!(letter_count("  the quick\tbrown\nfox "), 16);
+}
+
+#[test]
+fn letter_count_counts_characters_not_bytes() {
+    assert_eq!(letter_count("émilie"), 6);
+}
+
+#[test]
+fn letter_count_of_blank_text_is_zero() {
+    assert_eq!(letter_count(""), 0);
+    assert_eq!(letter_count(" \n\t "), 0);
 }
