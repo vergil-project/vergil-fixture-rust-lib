@@ -119,6 +119,21 @@ assert_eq!(longest_word("the quick  brown fox"), Some("quick"));
 assert_eq!(longest_word("   "), None);
 ```
 
+### `letter_count`
+
+```rust
+pub fn letter_count(text: &str) -> usize
+```
+
+Counts the characters of `text` that are not whitespace.
+
+```rust
+use vergil_fixture_rust_lib::letter_count;
+
+assert_eq!(letter_count("the quick  brown fox"), 16);
+assert_eq!(letter_count("   "), 0);
+```
+
 ## Errors
 
 ```rust
