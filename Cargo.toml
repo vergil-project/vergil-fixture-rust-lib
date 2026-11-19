@@ -1,6 +1,6 @@
 [package]
 name = "vergil-fixture-rust-lib"
-version = "0.1.4"
+version = "0.1.5"
 edition = "2024"
 description = "Vergil test fixture: a small Rust library. No users."
 license = "MIT"
