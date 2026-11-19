@@ -74,3 +74,31 @@ pub fn longest_word(text: &str) -> Option<&str> {
 pub fn letter_count(text: &str) -> usize {
     text.chars().filter(|c| !c.is_whitespace()).count()
 }
+
+/// The whitespace-separated words of `text` in title case: the first letter
+/// of each word upper-cased and the rest lower-cased, joined by single
+/// spaces.
+///
+/// ```
+/// use vergil_fixture_rust_lib::title_case;
+///
+/// assert_eq!(title_case("the QUICK  brown fox"), "The Quick Brown Fox");
+/// assert_eq!(title_case("   "), "");
+/// ```
+#[must_use]
+pub fn title_case(text: &str) -> String {
+    text.split_whitespace()
+        .map(|word| {
+            let mut titled = String::with_capacity(word.len());
+            for (index, letter) in word.chars().enumerate() {
+                if index == 0 {
+                    titled.extend(letter.to_uppercase());
+                } else {
+                    titled.extend(letter.to_lowercase());
+                }
+            }
+            titled
+        })
+        .collect::<Vec<_>>()
+        .join(" ")
+}

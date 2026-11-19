@@ -134,6 +134,22 @@ assert_eq!(letter_count("the quick  brown fox"), 16);
 assert_eq!(letter_count("   "), 0);
 ```
 
+### `title_case`
+
+```rust
+pub fn title_case(text: &str) -> String
+```
+
+The whitespace-separated words of `text` in title case: the first letter of
+each word upper-cased and the rest lower-cased, joined by single spaces.
+
+```rust
+use vergil_fixture_rust_lib::title_case;
+
+assert_eq!(title_case("the QUICK  brown fox"), "The Quick Brown Fox");
+assert_eq!(title_case("   "), "");
+```
+
 ## Errors
 
 ```rust
