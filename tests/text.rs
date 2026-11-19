@@ -1,6 +1,8 @@
 //! Tests for the text functions.
 
-use vergil_fixture_rust_lib::{initials, letter_count, longest_word, reverse_words, word_count};
+use vergil_fixture_rust_lib::{
+    initials, letter_count, longest_word, reverse_words, title_case, word_count,
+};
 
 #[test]
 fn word_count_counts_whitespace_separated_words() {
@@ -98,4 +100,33 @@ fn letter_count_counts_characters_not_bytes() {
 fn letter_count_of_blank_text_is_zero() {
     assert_eq!(letter_count(""), 0);
     assert_eq!(letter_count(" \n\t "), 0);
+}
+
+#[test]
+fn title_case_capitalizes_each_word() {
+    assert_eq!(title_case("ada lovelace"), "Ada Lovelace");
+}
+
+#[test]
+fn title_case_lower_cases_the_rest_of_each_word() {
+    assert_eq!(title_case("GRACE hOPPER"), "Grace Hopper");
+}
+
+#[test]
+fn title_case_joins_with_single_spaces() {
+    assert_eq!(
+        title_case("  the quick\t\tbrown\nfox "),
+        "The Quick Brown Fox"
+    );
+}
+
+#[test]
+fn title_case_handles_non_ascii_letters() {
+    assert_eq!(title_case("émilie du CHÂTELET"), "Émilie Du Châtelet");
+}
+
+#[test]
+fn title_case_of_blank_text_is_empty() {
+    assert_eq!(title_case(""), "");
+    assert_eq!(title_case(" \n\t "), "");
 }
