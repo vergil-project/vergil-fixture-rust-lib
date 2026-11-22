@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.6] - 2026-11-22
+
+### CI
+
+- stop granting actions: read to the security job (#59)
+
+### Chores
+
+- cargo update
+
+### Features
+
+- add shortest_word, and roll unicode-ident back in Cargo.lock (#60)
+
 ## [0.1.5] - 2026-11-22
 
 ### Features
