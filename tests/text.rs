@@ -1,7 +1,7 @@
 //! Tests for the text functions.
 
 use vergil_fixture_rust_lib::{
-    initials, letter_count, longest_word, reverse_words, title_case, word_count,
+    initials, is_palindrome, letter_count, longest_word, reverse_words, title_case, word_count,
 };
 
 #[test]
