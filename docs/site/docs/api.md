@@ -150,6 +150,22 @@ assert_eq!(title_case("the QUICK  brown fox"), "The Quick Brown Fox");
 assert_eq!(title_case("   "), "");
 ```
 
+### `is_palindrome`
+
+```rust
+pub fn is_palindrome(text: &str) -> bool
+```
+
+Whether `text` reads the same forwards and backwards, ignoring whitespace and
+letter case. Text with no letters at all is a palindrome.
+
+```rust
+use vergil_fixture_rust_lib::is_palindrome;
+
+assert!(is_palindrome("Never odd  or even"));
+assert!(!is_palindrome("the quick brown fox"));
+```
+
 ## Errors
 
 ```rust

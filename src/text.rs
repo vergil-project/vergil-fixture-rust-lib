@@ -102,3 +102,22 @@ pub fn title_case(text: &str) -> String {
         .collect::<Vec<_>>()
         .join(" ")
 }
+
+/// Whether `text` reads the same forwards and backwards, ignoring whitespace
+/// and letter case. Text with no letters at all is a palindrome.
+///
+/// ```
+/// use vergil_fixture_rust_lib::is_palindrome;
+///
+/// assert!(is_palindrome("Never odd  or even"));
+/// assert!(!is_palindrome("the quick brown fox"));
+/// ```
+#[must_use]
+pub fn is_palindrome(text: &str) -> bool {
+    let letters: Vec<char> = text
+        .chars()
+        .filter(|c| !c.is_whitespace())
+        .flat_map(char::to_lowercase)
+        .collect();
+    letters.iter().eq(letters.iter().rev())
+}
