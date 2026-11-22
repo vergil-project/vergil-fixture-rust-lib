@@ -1,7 +1,8 @@
 //! Tests for the text functions.
 
 use vergil_fixture_rust_lib::{
-    initials, is_palindrome, letter_count, longest_word, reverse_words, title_case, word_count,
+    initials, is_palindrome, letter_count, longest_word, reverse_words, shortest_word, title_case,
+    word_count,
 };
 
 #[test]
@@ -156,4 +157,31 @@ fn is_palindrome_handles_non_ascii_letters() {
 fn is_palindrome_of_blank_text_is_true() {
     assert!(is_palindrome(""));
     assert!(is_palindrome(" \n\t "));
+}
+
+#[test]
+fn shortest_word_finds_the_shortest_word() {
+    assert_eq!(shortest_word("Ada Lovelace"), Some("Ada"));
+}
+
+#[test]
+fn shortest_word_keeps_the_first_of_equally_short_words() {
+    assert_eq!(shortest_word("quick fox the brown"), Some("fox"));
+}
+
+#[test]
+fn shortest_word_counts_characters_not_bytes() {
+    assert_eq!(shortest_word("été abc"), Some("été"));
+    assert_eq!(shortest_word("abc été"), Some("abc"));
+}
+
+#[test]
+fn shortest_word_splits_on_any_whitespace() {
+    assert_eq!(shortest_word("  ccc\tbb\na "), Some("a"));
+}
+
+#[test]
+fn shortest_word_of_blank_text_is_none() {
+    assert_eq!(shortest_word(""), None);
+    assert_eq!(shortest_word(" \n\t "), None);
 }

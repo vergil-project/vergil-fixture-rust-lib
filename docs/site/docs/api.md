@@ -166,6 +166,23 @@ assert!(is_palindrome("Never odd  or even"));
 assert!(!is_palindrome("the quick brown fox"));
 ```
 
+### `shortest_word`
+
+```rust
+pub fn shortest_word(text: &str) -> Option<&str>
+```
+
+The shortest whitespace-separated word in `text`, counted in characters, or
+`None` when `text` has no words. Of several equally short words, the first
+wins.
+
+```rust
+use vergil_fixture_rust_lib::shortest_word;
+
+assert_eq!(shortest_word("the quick  brown fox"), Some("the"));
+assert_eq!(shortest_word("   "), None);
+```
+
 ## Errors
 
 ```rust
