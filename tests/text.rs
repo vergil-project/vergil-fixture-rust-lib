@@ -130,3 +130,30 @@ fn title_case_of_blank_text_is_empty() {
     assert_eq!(title_case(""), "");
     assert_eq!(title_case(" \n\t "), "");
 }
+
+#[test]
+fn is_palindrome_accepts_a_palindrome() {
+    assert!(is_palindrome("racecar"));
+}
+
+#[test]
+fn is_palindrome_rejects_a_non_palindrome() {
+    assert!(!is_palindrome("Ada Lovelace"));
+}
+
+#[test]
+fn is_palindrome_ignores_whitespace_and_case() {
+    assert!(is_palindrome("Never odd\tor  EVEN\n"));
+}
+
+#[test]
+fn is_palindrome_handles_non_ascii_letters() {
+    assert!(is_palindrome("Été"));
+    assert!(!is_palindrome("été e"));
+}
+
+#[test]
+fn is_palindrome_of_blank_text_is_true() {
+    assert!(is_palindrome(""));
+    assert!(is_palindrome(" \n\t "));
+}
