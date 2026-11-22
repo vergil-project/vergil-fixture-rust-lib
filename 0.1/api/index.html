@@ -554,6 +554,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#is_palindrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_palindrome
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -721,6 +732,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#is_palindrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_palindrome
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -853,6 +875,16 @@ each word upper-cased and the rest lower-cased, joined by single spaces.</p>
 
 <span class="fm">assert_eq!</span><span class="p">(</span><span class="n">title_case</span><span class="p">(</span><span class="s">"the QUICK  brown fox"</span><span class="p">),</span><span class="w"> </span><span class="s">"The Quick Brown Fox"</span><span class="p">);</span>
 <span class="fm">assert_eq!</span><span class="p">(</span><span class="n">title_case</span><span class="p">(</span><span class="s">"   "</span><span class="p">),</span><span class="w"> </span><span class="s">""</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="is_palindrome"><code>is_palindrome</code><a class="headerlink" href="#is_palindrome" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">is_palindrome</span><span class="p">(</span><span class="n">text</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kt">bool</span>
+</code></pre></div>
+<p>Whether <code>text</code> reads the same forwards and backwards, ignoring whitespace and
+letter case. Text with no letters at all is a palindrome.</p>
+<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">vergil_fixture_rust_lib</span><span class="p">::</span><span class="n">is_palindrome</span><span class="p">;</span>
+
+<span class="fm">assert!</span><span class="p">(</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s">"Never odd  or even"</span><span class="p">));</span>
+<span class="fm">assert!</span><span class="p">(</span><span class="o">!</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s">"the quick brown fox"</span><span class="p">));</span>
 </code></pre></div>
 <h2 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">Error</span><span class="w"> </span><span class="p">{</span>
