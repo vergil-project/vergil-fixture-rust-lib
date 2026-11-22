@@ -121,3 +121,20 @@ pub fn is_palindrome(text: &str) -> bool {
         .collect();
     letters.iter().eq(letters.iter().rev())
 }
+
+/// The shortest whitespace-separated word in `text`, counted in characters,
+/// or `None` when `text` has no words. Of several equally short words, the
+/// first wins.
+///
+/// ```
+/// use vergil_fixture_rust_lib::shortest_word;
+///
+/// assert_eq!(shortest_word("the quick  brown fox"), Some("the"));
+/// assert_eq!(shortest_word("   "), None);
+/// ```
+#[must_use]
+pub fn shortest_word(text: &str) -> Option<&str> {
+    // `min_by_key` keeps the first of equal minima.
+    text.split_whitespace()
+        .min_by_key(|word| word.chars().count())
+}
