@@ -162,7 +162,7 @@ pub fn unique_word_count(text: &str) -> usize {
 /// use vergil_fixture_rust_lib::word_lengths;
 ///
 /// assert_eq!(word_lengths("the quick  brown fox"), vec![3, 5, 5, 3]);
-/// assert!(word_lengths("   ").is_empty());
+/// assert_eq!(word_lengths("   "), Vec::<usize>::new());
 /// ```
 #[must_use]
 pub fn word_lengths(text: &str) -> Vec<usize> {

@@ -234,6 +234,6 @@ fn word_lengths_splits_on_any_whitespace() {
 
 #[test]
 fn word_lengths_of_blank_text_is_empty() {
-    assert!(word_lengths("").is_empty());
-    assert!(word_lengths(" \n\t ").is_empty());
+    assert_eq!(word_lengths(""), Vec::<usize>::new());
+    assert_eq!(word_lengths(" \n\t "), Vec::<usize>::new());
 }

@@ -212,7 +212,7 @@ characters, in the order the words appear.
 use vergil_fixture_rust_lib::word_lengths;
 
 assert_eq!(word_lengths("the quick  brown fox"), vec![3, 5, 5, 3]);
-assert!(word_lengths("   ").is_empty());
+assert_eq!(word_lengths("   "), Vec::<usize>::new());
 ```
 
 ## Errors
