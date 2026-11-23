@@ -199,6 +199,22 @@ assert_eq!(unique_word_count("the cat and the  hat"), 4);
 assert_eq!(unique_word_count("   "), 0);
 ```
 
+### `word_lengths`
+
+```rust
+pub fn word_lengths(text: &str) -> Vec<usize>
+```
+
+The length of each whitespace-separated word in `text`, counted in
+characters, in the order the words appear.
+
+```rust
+use vergil_fixture_rust_lib::word_lengths;
+
+assert_eq!(word_lengths("the quick  brown fox"), vec![3, 5, 5, 3]);
+assert!(word_lengths("   ").is_empty());
+```
+
 ## Errors
 
 ```rust

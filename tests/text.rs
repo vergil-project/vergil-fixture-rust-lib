@@ -2,7 +2,7 @@
 
 use vergil_fixture_rust_lib::{
     initials, is_palindrome, letter_count, longest_word, reverse_words, shortest_word, title_case,
-    unique_word_count, word_count,
+    unique_word_count, word_count, word_lengths,
 };
 
 #[test]
@@ -215,4 +215,25 @@ fn unique_word_count_splits_on_any_whitespace() {
 fn unique_word_count_of_blank_text_is_zero() {
     assert_eq!(unique_word_count(""), 0);
     assert_eq!(unique_word_count(" \n\t "), 0);
+}
+
+#[test]
+fn word_lengths_lists_each_word_length_in_order() {
+    assert_eq!(word_lengths("Ada Lovelace"), vec![3, 8]);
+}
+
+#[test]
+fn word_lengths_counts_characters_not_bytes() {
+    assert_eq!(word_lengths("émilie du châtelet"), vec![6, 2, 8]);
+}
+
+#[test]
+fn word_lengths_splits_on_any_whitespace() {
+    assert_eq!(word_lengths("  a\tbb\n\nccc "), vec![1, 2, 3]);
+}
+
+#[test]
+fn word_lengths_of_blank_text_is_empty() {
+    assert!(word_lengths("").is_empty());
+    assert!(word_lengths(" \n\t ").is_empty());
 }
