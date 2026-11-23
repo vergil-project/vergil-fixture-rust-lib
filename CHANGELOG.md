@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.8] - 2026-11-23
+
+### CI
+
+- pass the App secrets to the shared docs workflows (#88)
+
+### Chores
+
+- cargo update
+
+### Features
+
+- add word_lengths, and roll itoa back in Cargo.lock (#90)
+
 ## [0.1.7] - 2026-11-23
 
 ### Chores
