@@ -138,3 +138,19 @@ pub fn shortest_word(text: &str) -> Option<&str> {
     text.split_whitespace()
         .min_by_key(|word| word.chars().count())
 }
+
+/// Counts the distinct whitespace-separated words in `text`. Words are
+/// compared exactly, so words that differ only in letter case are distinct.
+///
+/// ```
+/// use vergil_fixture_rust_lib::unique_word_count;
+///
+/// assert_eq!(unique_word_count("the cat and the  hat"), 4);
+/// assert_eq!(unique_word_count("   "), 0);
+/// ```
+#[must_use]
+pub fn unique_word_count(text: &str) -> usize {
+    text.split_whitespace()
+        .collect::<std::collections::HashSet<_>>()
+        .len()
+}

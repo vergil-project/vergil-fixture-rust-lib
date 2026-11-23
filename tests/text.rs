@@ -2,7 +2,7 @@
 
 use vergil_fixture_rust_lib::{
     initials, is_palindrome, letter_count, longest_word, reverse_words, shortest_word, title_case,
-    word_count,
+    unique_word_count, word_count,
 };
 
 #[test]
@@ -184,4 +184,35 @@ fn shortest_word_splits_on_any_whitespace() {
 fn shortest_word_of_blank_text_is_none() {
     assert_eq!(shortest_word(""), None);
     assert_eq!(shortest_word(" \n\t "), None);
+}
+
+#[test]
+fn unique_word_count_counts_each_word_once() {
+    assert_eq!(unique_word_count("the cat and the hat"), 4);
+}
+
+#[test]
+fn unique_word_count_of_distinct_words_is_word_count() {
+    assert_eq!(unique_word_count("the quick brown fox"), 4);
+}
+
+#[test]
+fn unique_word_count_is_case_sensitive() {
+    assert_eq!(unique_word_count("The the THE"), 3);
+}
+
+#[test]
+fn unique_word_count_handles_non_ascii_words() {
+    assert_eq!(unique_word_count("été Été été"), 2);
+}
+
+#[test]
+fn unique_word_count_splits_on_any_whitespace() {
+    assert_eq!(unique_word_count("  a\tb\na  b "), 2);
+}
+
+#[test]
+fn unique_word_count_of_blank_text_is_zero() {
+    assert_eq!(unique_word_count(""), 0);
+    assert_eq!(unique_word_count(" \n\t "), 0);
 }
