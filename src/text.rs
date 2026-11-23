@@ -154,3 +154,19 @@ pub fn unique_word_count(text: &str) -> usize {
         .collect::<std::collections::HashSet<_>>()
         .len()
 }
+
+/// The length of each whitespace-separated word in `text`, counted in
+/// characters, in the order the words appear.
+///
+/// ```
+/// use vergil_fixture_rust_lib::word_lengths;
+///
+/// assert_eq!(word_lengths("the quick  brown fox"), vec![3, 5, 5, 3]);
+/// assert_eq!(word_lengths("   "), Vec::<usize>::new());
+/// ```
+#[must_use]
+pub fn word_lengths(text: &str) -> Vec<usize> {
+    text.split_whitespace()
+        .map(|word| word.chars().count())
+        .collect()
+}
