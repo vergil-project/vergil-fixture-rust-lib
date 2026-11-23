@@ -35,8 +35,8 @@ release and the docs site. The fixture exercises:
 
 Its public API is made up of the functions `greet`, `parse_greeting`,
 `word_count`, `initials`, `reverse_words`, `longest_word`, `letter_count`,
-`title_case`, `is_palindrome`, `shortest_word` and `unique_word_count`, plus
-the `Greeting` and `Error` types.
+`title_case`, `is_palindrome`, `shortest_word`, `unique_word_count` and
+`word_lengths`, plus the `Greeting` and `Error` types.
 
 ## Getting Started
 
