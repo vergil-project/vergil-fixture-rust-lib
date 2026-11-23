@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.7] - 2026-11-23
+
+### Chores
+
+- cargo update
+
+### Features
+
+- add unique_word_count, and roll memchr back in Cargo.lock (#83)
+
 ## [0.1.6] - 2026-11-22
 
 ### CI
