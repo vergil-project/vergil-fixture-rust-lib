@@ -215,6 +215,22 @@ assert_eq!(word_lengths("the quick  brown fox"), vec![3, 5, 5, 3]);
 assert_eq!(word_lengths("   "), Vec::<usize>::new());
 ```
 
+### `last_word`
+
+```rust
+pub fn last_word(text: &str) -> Option<&str>
+```
+
+The last whitespace-separated word in `text`, or `None` when `text` has no
+words.
+
+```rust
+use vergil_fixture_rust_lib::last_word;
+
+assert_eq!(last_word("the quick  brown fox "), Some("fox"));
+assert_eq!(last_word("   "), None);
+```
+
 ## Errors
 
 ```rust
