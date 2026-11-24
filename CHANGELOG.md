@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.9] - 2026-11-24
+
+### CI
+
+- read the automation App secrets from the automation environment (#96)
+
+### Chores
+
+- cargo update
+- sync the managed files with the released templates (#95)
+- sync the managed files with the released templates (#100)
+
+### Features
+
+- the daily agent audit (#99)
+- add last_word, and roll memchr back in Cargo.lock (#101)
+
 ## [0.1.8] - 2026-11-23
 
 ### CI

@@ -170,3 +170,17 @@ pub fn word_lengths(text: &str) -> Vec<usize> {
         .map(|word| word.chars().count())
         .collect()
 }
+
+/// The last whitespace-separated word in `text`, or `None` when `text` has
+/// no words.
+///
+/// ```
+/// use vergil_fixture_rust_lib::last_word;
+///
+/// assert_eq!(last_word("the quick  brown fox "), Some("fox"));
+/// assert_eq!(last_word("   "), None);
+/// ```
+#[must_use]
+pub fn last_word(text: &str) -> Option<&str> {
+    text.split_whitespace().next_back()
+}
