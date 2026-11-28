@@ -25,6 +25,6 @@ mod text;
 pub use error::Error;
 pub use greeting::{Greeting, greet, parse_greeting};
 pub use text::{
-    initials, is_palindrome, last_word, letter_count, longest_word, reverse_words, shortest_word,
-    title_case, unique_word_count, word_count, word_lengths,
+    first_word, initials, is_palindrome, last_word, letter_count, longest_word, reverse_words,
+    shortest_word, title_case, unique_word_count, word_count, word_lengths,
 };
