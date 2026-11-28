@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.10] - 2026-11-28
+
+### Chores
+
+- cargo update
+- sync the managed files with the released templates (#112)
+- sync the managed files with the released templates (#113)
+
+### Features
+
+- add first_word and roll back itoa in the lockfile (#114)
+
 ## [0.1.9] - 2026-11-24
 
 ### CI
