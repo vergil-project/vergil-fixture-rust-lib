@@ -1,8 +1,8 @@
 //! Tests for the text functions.
 
 use vergil_fixture_rust_lib::{
-    initials, is_palindrome, last_word, letter_count, longest_word, reverse_words, shortest_word,
-    title_case, unique_word_count, word_count, word_lengths,
+    first_word, initials, is_palindrome, last_word, letter_count, longest_word, reverse_words,
+    shortest_word, title_case, unique_word_count, word_count, word_lengths,
 };
 
 #[test]
@@ -257,4 +257,25 @@ fn last_word_splits_on_any_whitespace() {
 fn last_word_of_blank_text_is_none() {
     assert_eq!(last_word(""), None);
     assert_eq!(last_word(" \n\t "), None);
+}
+
+#[test]
+fn first_word_finds_the_first_word() {
+    assert_eq!(first_word("Ada Lovelace"), Some("Ada"));
+}
+
+#[test]
+fn first_word_keeps_a_single_word() {
+    assert_eq!(first_word("émilie"), Some("émilie"));
+}
+
+#[test]
+fn first_word_splits_on_any_whitespace() {
+    assert_eq!(first_word(" \n\t  a\tbb\nccc "), Some("a"));
+}
+
+#[test]
+fn first_word_of_blank_text_is_none() {
+    assert_eq!(first_word(""), None);
+    assert_eq!(first_word(" \n\t "), None);
 }
